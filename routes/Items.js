@@ -22,7 +22,7 @@ recordRoutes.route("/Items").get(function (req, res) {
    .toArray(function (err, result) {
      if (err) throw err;
      res.json(result);
-   });
+   }).limit(100);
 });
 recordRoutes.route("/Items/:id").get(function (req, res) {
     let db_connect = dbo.getDb();
