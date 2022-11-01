@@ -18,11 +18,11 @@ recordRoutes.route("/Items").get(function (req, res) {
  let db_connect = dbo.getDb("AnimalCrossing");
  db_connect
    .collection('Items')
-   .find({})
+   .find({}).limit(100)
    .toArray(function (err, result) {
      if (err) throw err;
      res.json(result);
-   }).limit(100);
+   });
 });
 recordRoutes.route("/Items/:id").get(function (req, res) {
     let db_connect = dbo.getDb();
