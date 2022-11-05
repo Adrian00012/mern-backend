@@ -18,7 +18,9 @@ recordRoutes.route("/Items").get(function (req, res) {
  let db_connect = dbo.getDb("AnimalCrossing");
  db_connect
    .collection('Items')
-   .find({}).limit(100)
+   .find({
+    sourceSheet:
+    "Housewares"}).limit(100)
    .toArray(function (err, result) {
      if (err) throw err;
      res.json(result);
