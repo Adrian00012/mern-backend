@@ -20,7 +20,7 @@ recordRoutes.route("/Items").get(function (req, res) {
    .collection('Items')
    .find({
     sourceSheet:
-    "Housewares"}).limit(100)
+    "Miscellaneous"}).limit(100)
    .toArray(function (err, result) {
      if (err) throw err;
      res.json(result);
